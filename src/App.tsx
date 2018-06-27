@@ -8,9 +8,21 @@ class App extends React.Component {
     toggle: true,
   };
 
+  constructor(props: any) {
+    super(props);
+  }
+
+  componentWillMount() {
+    console.log('Will mount');
+  }
+
+  componentDidMount() {
+    console.info('Did mount')
+  }
+
   toggle = () => {
     this.setState({ toggle: !this.state.toggle });
-  }
+  };
 
   render() {
     return (
@@ -19,7 +31,9 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Welcome to React</h1>
         </header>
-        {this.state.toggle && <p>This should show and hide</p>}
+        {this.state.toggle &&
+          <p>This should show and hide</p>
+        }
         <button onClick={this.toggle}>Show / Hide</button>
       </div>
     );
