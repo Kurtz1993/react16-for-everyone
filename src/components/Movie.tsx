@@ -24,7 +24,7 @@ const Movie: React.SFC<MovieProps> = ({ movie }) => (
   </div>
 );
 
-const Poster = styled.img`
+export const Poster = styled.img`
   box-shadow: 0 0 35px black;
 `;
 
