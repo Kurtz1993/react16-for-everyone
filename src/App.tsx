@@ -4,24 +4,14 @@ import './App.css';
 import logo from './logo.svg';
 
 class App extends React.Component {
-  state = {
-    toggle: true,
-  };
+  inputRef = React.createRef<HTMLInputElement>();
 
   constructor(props: any) {
     super(props);
   }
 
-  componentWillMount() {
-    console.log('Will mount');
-  }
-
-  componentDidMount() {
-    console.info('Did mount')
-  }
-
-  toggle = () => {
-    this.setState({ toggle: !this.state.toggle });
+  submit = () => {
+    console.log(this.inputRef.current.value);
   };
 
   render() {
@@ -31,10 +21,9 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Welcome to React</h1>
         </header>
-        {this.state.toggle &&
-          <p>This should show and hide</p>
-        }
-        <button onClick={this.toggle}>Show / Hide</button>
+
+        <input type="text" ref={this.inputRef} />
+        <button onClick={this.submit}>Show Value</button>
       </div>
     );
   }
