@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-export interface IMovieProps {
+export interface MovieProps {
   movie: {
     id: number;
     title: string;
   };
 }
 
-class Movie extends React.Component<IMovieProps> {
+class Movie extends React.Component<MovieProps> {
   render() {
     return <div className="movie">{this.props.movie.title}</div>;
   }
