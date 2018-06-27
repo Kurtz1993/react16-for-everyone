@@ -1,6 +1,9 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 
+const POSTER_PATH = "https://image.tmdb.org/t/p/w154";
+const BACKDROP_PATH = "https://image.tmdb.org/t/p/w1280";
+
 class MovieDetail extends React.Component<RouteComponentProps<any>> {
   state = {
     movie: {} as any
@@ -21,11 +24,15 @@ class MovieDetail extends React.Component<RouteComponentProps<any>> {
   }
 
   render() {
+    const { movie } = this.state;
+
     return (
       <div className="movie__detail">
-        <h1>{this.state.movie.title}</h1>
-        <h3>{this.state.movie.release_date}</h3>
-        <p>{this.state.movie.overview}</p>
+        <img src={`${BACKDROP_PATH}${movie.backdrop_path}`} alt={movie.title} />
+        <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+        <h1>{movie.title}</h1>
+        <h3>{movie.release_date}</h3>
+        <p>{movie.overview}</p>
       </div>
     );
   }
