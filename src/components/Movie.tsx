@@ -8,10 +8,10 @@ export interface MovieProps {
   desc: string;
 }
 
-const Movie: React.SFC<MovieProps> = props => (
+const Movie: React.SFC<MovieProps> = ({ movie, desc }) => (
   <div>
-    <h3>{props.movie.title}</h3>
-    <p>{props.desc}</p>
+    <h3>{movie.title}</h3>
+    <p>{desc}</p>
   </div>
 );
 
