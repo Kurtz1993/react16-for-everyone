@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export interface MovieProps {
   movie: {
@@ -8,19 +8,15 @@ export interface MovieProps {
   desc: string;
 }
 
-class Movie extends React.Component<MovieProps> {
-  static defaultProps: Partial<MovieProps> = {
-    desc: 'Currently not available',
-  };
+const Movie: React.SFC<MovieProps> = props => (
+  <div>
+    <h3>{props.movie.title}</h3>
+    <p>{props.desc}</p>
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        <h3>{this.props.movie.title}</h3>
-        <p>{this.props.desc}</p>
-      </div>
-    );
-  }
-}
+Movie.defaultProps = {
+  desc: "Currently not available"
+};
 
 export default Movie;
