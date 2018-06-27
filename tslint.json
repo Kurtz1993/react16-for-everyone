@@ -9,7 +9,8 @@
       true,
       "no-public"
     ],
-    "no-console": false
+    "no-console": false,
+    "jsx-boolean-value": false
   },
   "linterOptions": {
     "exclude": [
