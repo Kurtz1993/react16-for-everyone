@@ -8,7 +8,7 @@ import { Poster } from "@app/components/Movie";
 const POSTER_PATH = "https://image.tmdb.org/t/p/w154";
 const BACKDROP_PATH = "https://image.tmdb.org/t/p/w1280";
 
-class MovieDetail extends React.Component<RouteComponentProps<any>> {
+class MovieDetail extends React.PureComponent<RouteComponentProps<any>> {
   state = {
     movie: {} as any
   };
