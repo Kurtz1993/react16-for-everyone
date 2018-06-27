@@ -1,41 +1,32 @@
 import * as React from 'react';
-import './App.css';
 
+import Movie from '@app/components/Movie';
+import './App.css';
 import logo from './logo.svg';
 
+const movies = [
+  {
+    id: 1,
+    title: 'Star Wars',
+  },
+  {
+    id: 2,
+    title: 'Spider Man',
+  },
+  {
+    id: 3,
+    title: '36th Chamber of Shaolin',
+  },
+];
+
 class App extends React.Component {
-  state = {
-    input: 'Hello'
-  };
-  inputRef = React.createRef<HTMLInputElement>();
-
-  constructor(props: any) {
-    super(props);
-  }
-
-  updateInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ input: e.target.value });
-  }
-
-  submit = () => {
-    console.log(this.inputRef.current.value);
-  };
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Welcome to React</h1>
         </header>
-
-        <input
-          type="text"
-          onChange={this.updateInput}
-          value={this.state.input}
-        />
-        <input type="text" ref={this.inputRef} />
-        <button onClick={this.submit}>Show Value</button>
+        {movies.map(movie => <Movie key={movie.id} movie={movie} />)}
       </div>
     );
   }
