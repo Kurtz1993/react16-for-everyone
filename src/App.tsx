@@ -13,7 +13,7 @@ const App = () => (
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <Switch>
-        <Route path="/" component={MoviesList} />
+        <Route exact path="/" component={MoviesList} />
       </Switch>
     </div>
   </Router>
