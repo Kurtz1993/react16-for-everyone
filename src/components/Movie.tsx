@@ -1,6 +1,7 @@
 import * as React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Overdrive from "react-overdrive";
 
 const POSTER_PATH = "https://image.tmdb.org/t/p/w154";
 
@@ -16,10 +17,13 @@ export interface MovieProps {
 const Movie: React.SFC<MovieProps> = ({ movie }) => (
   <div>
     <Link to={`/movie/${movie.id}`}>
-      <Poster
-        src={`${POSTER_PATH}${movie.poster_path}`}
-        alt={movie.title}
-      />
+      <Overdrive id={movie.id}>
+        <Poster
+          id={movie.id.toString()}
+          src={`${POSTER_PATH}${movie.poster_path}`}
+          alt={movie.title}
+        />
+      </Overdrive>
     </Link>
   </div>
 );
