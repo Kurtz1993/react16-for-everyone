@@ -1,22 +1,23 @@
 import * as React from "react";
 
+const POSTER_PATH = "https://image.tmdb.org/t/p/w154";
+
 export interface MovieProps {
   movie: {
     id: number;
     title: string;
+    poster_path: string;
+    overview: string;
   };
-  desc: string;
 }
 
-const Movie: React.SFC<MovieProps> = ({ movie, desc }) => (
+const Movie: React.SFC<MovieProps> = ({ movie }) => (
   <div>
-    <h3>{movie.title}</h3>
-    <p>{desc}</p>
+    <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title}/>
   </div>
 );
 
 Movie.defaultProps = {
-  desc: "Currently not available"
 };
 
 export default Movie;
