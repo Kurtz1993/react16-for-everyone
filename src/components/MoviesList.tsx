@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Movie from "@app/components/Movie";
 
-class MoviesList extends React.Component {
+class MoviesList extends React.PureComponent {
   state = {
     movies: [] as any[]
   };
